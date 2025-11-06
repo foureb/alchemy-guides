@@ -225,7 +225,7 @@ Stores a `Boolean` value in the database. Renders a checkbox in the editor parti
 
 ## Select
 
-Renders a select box in the editor partial and stores the value as `String`.
+Renders a select box in the editor partial and stores the value as `String`. When configured for multiple selection, it stores the values as an `Array`.
 
 Useful for letting your user select from a limited set of choices.
 
@@ -235,13 +235,29 @@ Useful for letting your user select from a limited set of choices.
 
   A list of values your users can select from. Use [a two dimensional array](https://guides.rubyonrails.org/form_helpers.html#the-select-and-option-tags) for having value and text pairs.
 
+* **multiple** `Boolean` (default: false)
+
+  If set to `true`, the user can select multiple values from the list. The selected values will be stored as an `Array` instead of a single `String`.
+
 ### Example
+
+Single selection (default):
 
 ~~~ yaml
 - name: width
   type: Select
   settings:
     select_values: ['200', '300', '400']
+~~~
+
+Multiple selection:
+
+~~~ yaml
+- name: categories
+  type: Select
+  settings:
+    select_values: ['Technology', 'Design', 'Marketing', 'Sales']
+    multiple: true
 ~~~
 
 ::: tip
