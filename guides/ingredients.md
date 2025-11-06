@@ -239,6 +239,10 @@ Useful for letting your user select from a limited set of choices.
 
   If set to `true`, the user can select multiple values from the list. The selected values will be stored as an `Array` instead of a single `String`.
 
+* **default** `String` (optional)
+
+  A default value to prefill newly created elements. The value must be one of the values from `select_values`.
+
 ### Example
 
 Single selection (default):
@@ -248,6 +252,7 @@ Single selection (default):
   type: Select
   settings:
     select_values: ['200', '300', '400']
+  default: '300'
 ~~~
 
 Multiple selection:
